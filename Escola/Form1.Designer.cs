@@ -38,6 +38,7 @@
             Email = new Label();
             Telefone = new Label();
             BtnCadastrar = new Button();
+            btnExcluir = new Button();
             SuspendLayout();
             // 
             // btnConexao
@@ -125,11 +126,22 @@
             BtnCadastrar.UseVisualStyleBackColor = true;
             BtnCadastrar.Click += BtnCadastrar_Click;
             // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(365, 364);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(93, 29);
+            btnExcluir.TabIndex = 10;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnExcluir);
             Controls.Add(BtnCadastrar);
             Controls.Add(Telefone);
             Controls.Add(Email);
@@ -158,5 +170,6 @@
         private Label Email;
         private Label Telefone;
         private Button BtnCadastrar;
+        private Button btnExcluir;
     }
 }

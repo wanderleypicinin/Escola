@@ -45,7 +45,26 @@ namespace Escola.Dados
             }
 
         }
+        public void Excluir(int idaluno)
+        {
+            try
+            {
+                MySqlConnection mySqlconnction = DBConnections.GetConnection();
+                using MySqlConnection conn = mySqlconnction;
+                conn.Open();
 
+                string query = "DELETE FROM alunos WHERE idalunos=@idalunos";
+                MySqlCommand cmd = new MySqlCommand(query,conn);
+                cmd.Parameters.AddWithValue("@idalunos", idaluno);
+
+                cmd.ExecuteNonQuery ();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                string Erro = ex.Message.ToString().Trim();
+            }
+        }
     }
 
 }

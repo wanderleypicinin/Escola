@@ -22,7 +22,7 @@ namespace Escola
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
-            DBConnections dados = new DBConnections();  
+            DBConnections dados = new DBConnections();
 
             dados.Cadastrar(Convert.ToInt32(txtId.Text), txtNome.Text, txtEmail.Text, txtTelefone.Text);
             MessageBox.Show("Cadastro com sucesso!");
@@ -30,6 +30,16 @@ namespace Escola
             txtNome.Clear();
             txtEmail.Clear();
             txtTelefone.Clear();
+            txtId.Focus();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            //excluir
+            DBConnections dados = new DBConnections();
+            dados.Excluir(Convert.ToInt32(txtId.Text));
+            MessageBox.Show("Excluido com sucesso");
+            txtId.Clear();
             txtId.Focus();
         }
     }
